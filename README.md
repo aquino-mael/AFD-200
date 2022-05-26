@@ -1,2 +1,2 @@
-# AFD-200
-Aqui contem códigos dos Labs presentes no livro "Flutter Application Development" para certificação AFD-200
+# Certificação AFD-200
+Códigos dos Labs presentes no livro "Flutter Application Development" para certificação como AFD-200
