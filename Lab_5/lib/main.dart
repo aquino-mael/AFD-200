@@ -29,36 +29,33 @@ class Home extends StatelessWidget {
           "Android ATC Pizza Place",
         ),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          children: const [
-            PizzaCard(
-              image: NetworkImage(
-                "https://www.simplyrecipes.com/thmb/VguL9lzK0kaemIt0esv9KLanb3I=/648x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/Simply-Recipes-Vegetarian-Pizza-LEAD-2-090a64ecfa0043f8bca06cc87ce910af.jpg",
-              ),
-              pizzaName: "Vegetable Pizza",
+      body: Column(
+        children: const [
+          PizzaCard(
+            image: NetworkImage(
+              "https://www.simplyrecipes.com/thmb/VguL9lzK0kaemIt0esv9KLanb3I=/648x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/Simply-Recipes-Vegetarian-Pizza-LEAD-2-090a64ecfa0043f8bca06cc87ce910af.jpg",
             ),
-            SizedBox(
-              height: 16.0,
+            pizzaName: "Vegetable Pizza",
+          ),
+          SizedBox(
+            height: 16.0,
+          ),
+          PizzaCard(
+            image: NetworkImage(
+              "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F9%2F2022%2F02%2F15%2Fclassic-cheese-pizza-FT-RECIPE0422.jpg",
             ),
-            PizzaCard(
-              image: NetworkImage(
-                "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F9%2F2022%2F02%2F15%2Fclassic-cheese-pizza-FT-RECIPE0422.jpg",
-              ),
-              pizzaName: "Cheese Pizza",
+            pizzaName: "Cheese Pizza",
+          ),
+          SizedBox(
+            height: 16.0,
+          ),
+          PizzaCard(
+            image: NetworkImage(
+              "https://thumbs.dreamstime.com/b/batatas-fritas-em-uma-caixa-amarela-isolada-no-fundo-branco-141638257.jpg",
             ),
-            SizedBox(
-              height: 16.0,
-            ),
-            PizzaCard(
-              image: NetworkImage(
-                "https://thumbs.dreamstime.com/b/batatas-fritas-em-uma-caixa-amarela-isolada-no-fundo-branco-141638257.jpg",
-              ),
-              pizzaName: "Box Of Fries",
-            ),
-          ],
-        ),
+            pizzaName: "Box Of Fries",
+          ),
+        ],
       ),
     );
   }
@@ -77,6 +74,8 @@ class PizzaCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      elevation: 20.0,
+      margin: const EdgeInsets.all(10.0),
       color: Theme.of(context).primaryColor,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(10.0),
@@ -84,19 +83,21 @@ class PizzaCard extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             SizedBox(
               width: 100,
               height: 100,
               child: Image(image: image),
             ),
+            const SizedBox(
+              width: 20.0,
+            ),
             Text(
               pizzaName,
               style: const TextStyle(
                 color: Colors.white,
-                fontWeight: FontWeight.w800,
-                fontSize: 20.0
+                fontWeight: FontWeight.bold,
+                fontSize: 30.0
               ),
             ),
           ],
